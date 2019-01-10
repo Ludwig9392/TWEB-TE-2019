@@ -1,4 +1,5 @@
 #### Pas de deploiment donc faire un npm start en local quoi :(
+#### Bon et pas comme moi.... avec un npm install avant aussi ^^'
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
