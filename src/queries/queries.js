@@ -1,7 +1,6 @@
 import { gql } from 'apollo-boost';
 
 // QUERIES ------------------------------
-
 const getPopularMoviesQuery = gql`
   {
     popularMovies(page: 1) {
@@ -25,15 +24,4 @@ const getUpcomingMoviesQuery = gql`
   }
 `
 
-
-// MUTATIONS -----------------------------
-const addBookMutation = gql`
-  mutation ($name:String!, $genre:String!, $authorId:ID!) {
-    addBook(name: $name, genre: $genre, authorId: $authorId) {
-      name
-      id
-    }
-  }
-`
-
-export { getPopularMoviesQuery, getUpcomingMoviesQuery, addBookMutation };
+export { getPopularMoviesQuery, getUpcomingMoviesQuery };

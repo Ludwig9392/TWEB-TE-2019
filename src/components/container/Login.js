@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Login extends Component {
   state = {
     username: '',
@@ -13,26 +12,26 @@ class Login extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    // DO SOME SIGN IN STUFF...
   }
   render() {
     return (
-      <div>
-        <h1>Login</h1>
+      <div className="container login">
+        <h3>Login</h3>
 
         <form onSubmit={this.handleSubmit}>
 
-        <div className="field">
+        <div className="input-field">
           <label>Username:</label>
-          <input type="text" id="username" placeholder="username" onChange={this.handleChange} />
+          <input type="text" id="username" onChange={this.handleChange} />
         </div>
 
-        <div className="field">
+        <div className="input-field">
           <label>Password:</label>
-          <input type="password" id="password" placeholder="password" onChange={this.handleChange} />
+          <input type="password" id="password" onChange={this.handleChange} />
         </div>
 
-        <button>LOGIN</button>
+        <button className="btn">LOGIN</button>
 
         </form>
       </div>

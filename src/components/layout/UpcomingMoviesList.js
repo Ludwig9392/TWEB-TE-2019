@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
-import { getPopularMoviesQuery } from '../queries/queries';
+import { getUpcomingMoviesQuery } from '../../queries/queries';
 
-class PopularMoviesList extends Component {
+class UpcomingMoviesList extends Component {
   state = {
-    selected: null,
+    selected: null, // I wanted to show details about selected movies, ... no time here too
   }
+
   displayMovies = () => {
     const data = this.props.data;
     const output = data.loading
       ? (<div>Loading movies... </div>)
-      : data.popularMovies.results.map(movie => {
+      : data.upcomingMovies.results.map(movie => {
           // Construction de l'url de l'image
           const posterUrl = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
         return (
@@ -21,6 +22,7 @@ class PopularMoviesList extends Component {
       });
     return output;
   }
+
   render() {
     return (
       <div>
@@ -32,4 +34,4 @@ class PopularMoviesList extends Component {
   }
 }
 
-export default graphql(getPopularMoviesQuery)(PopularMoviesList);
+export default graphql(getUpcomingMoviesQuery)(UpcomingMoviesList);

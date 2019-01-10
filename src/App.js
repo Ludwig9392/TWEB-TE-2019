@@ -4,16 +4,17 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 // Components
-import Navbar from './components/Navbar';
-import Login from './components/Login';
-import UpcomingMovies from './components/UpcomingMovies';
-import PopularMovies from './components/PopularMovies';
+import Navbar from './components/layout/Navbar';
+import Login from './components/container/Login';
+import UpcomingMovies from './components/container/UpcomingMovies';
+import PopularMovies from './components/container/PopularMovies';
 
 // apollo client setup
 const client = new ApolloClient({
   uri: 'https://graphql-tmdb.herokuapp.com/graphql',
   headers: {
-    authorization: 'f1be4bafe6f7cb0cb84f5948c5b75497',
+    // a mettre dans un .env ...(pas eu le temps pour finir T.T)
+    authorization: "f1be4bafe6f7cb0cb84f5948c5b75497",
   },
 });
 
@@ -32,7 +33,6 @@ class App extends Component {
           </div>
         </ApolloProvider>
       </BrowserRouter>
-      
     );
   }
 }
